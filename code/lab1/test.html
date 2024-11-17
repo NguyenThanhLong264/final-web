@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input {
+            margin-bottom: 15px;
+            padding: 8px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        button {
+            margin-right: 10px;
+            padding: 8px 15px;
+        }
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Product Form</h1>
+    <form id="productForm">
+        <label for="itemName">Item Name:</label>
+        <input id="itemName" name="itemName" >
+        <span id="itemNameError" class="error"></span>
+
+        <label for="unit">Unit:</label>
+        <input type="text" id="unit" name="unit" required>
+        <span id="unitError" class="error"></span>
+
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" required>
+        <span id="quantityError" class="error"></span>
+
+        <label for="price">Estimated Price:</label>
+        <input type="number" step="0.01" id="price" name="price" required>
+        <span id="priceError" class="error"></span>
+
+        <button type="button" id="submitBtn">Submit</button>
+        <button type="button" id="displayBtn">Display</button>
+    </form>
+
+    <div id="productTable"></div>
+
+    <script>
+        document.getElementById("submitBtn").addEventListener("click", function () {
+            const name = document.getElementById("itemName").value;
+            const unit = document.getElementById("unit").value;
+            const quantity = document.getElementById("quantity").value;
+            const price = document.getElementById("price").value;
+
+            let valid = true;
+
+            // Validation
+            const alphaNumericSpace = /^[a-zA-Z0-9 ]+$/;
+            if (!alphaNumericSpace.test(name)) {
+                document.getElementById("itemNameError").innerText = "Invalid item name.";
+                valid = false;
+            } else {
+                document.getElementById("itemNameError").innerText = "";
+            }
+
+            if (!alphaNumericSpace.test(unit)) {
+                document.getElementById("unitError").innerText = "Invalid unit.";
+                valid = false;
+            } else {
+                document.getElementById("unitError").innerText = "";
+            }
+
+            if (quantity < 0 || !Number.isInteger(parseFloat(quantity))) {
+                document.getElementById("quantityError").innerText = "Quantity must be a non-negative integer.";
+                valid = false;
+            } else {
+                document.getElementById("quantityError").innerText = "";
+            }
+
+            if (price < 0) {
+                document.getElementById("priceError").innerText = "Price must be a non-negative number.";
+                valid = false;
+            } else {
+                document.getElementById("priceError").innerText = "";
+            }
+
+           
+        });
+
+        document.getElementById("displayBtn").addEventListener("click", function () {
+            fetch("get_product.php")
+                .then((response) => response.text())
+                .then((html) => {
+                    document.getElementById("productTable").innerHTML = html;
+                })
+                .catch((error) => console.error("Error:", error));
+        });
+    </script>
+</body>
+</html>

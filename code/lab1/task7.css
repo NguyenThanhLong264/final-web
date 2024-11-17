@@ -1,0 +1,22 @@
+.task7{
+    display: flex;
+    justify-content: center;
+}
+
+.task7 img{
+    border: 5px solid red;
+}
+
+.task7 img:hover{
+    border: 5px solid blue;
+    transform: scale(1.1);
+}
+
+img{
+    border: 5px solid red;
+}
+
+img:hover{
+    border: 5px solid blue;
+    transform: scale(1.1);
+}

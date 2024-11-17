@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Landing Page</title>
+	<link rel="stylesheet" href="task11.css">
+</head>
+<body>
+	<header>
+		<h1>Banner</h1>
+	</header>
+
+	<main>
+		<div class="left-part">
+			<div data-tab-target="#thumbnail1" class="categ active" id="category1">
+				<h3>Category 1</h3>
+			</div>
+			<div data-tab-target="#thumbnail2" class="categ" id="category2">
+				<h3>Category 2</h3>
+			</div>
+			<div data-tab-target="#thumbnail3" class="categ" id="category3">
+				<h3>Category 3</h3>
+			</div>
+			<div data-tab-target="#about_student" class="categ" id="about">
+				<h3>About</h3>
+			</div>
+		</div>
+
+		<div class="right-part">
+			<div data-tab-content class="thumbnail active" id="thumbnail1">
+				<a target="popup" href="./images/thumbs-up.png">
+					<img src="./images/thumbs-up.png" alt="thumbs-up">
+				</a>
+			</div>
+
+			<div data-tab-content class="thumbnail" id="thumbnail2">
+				<a target="popup" href="./images/pixelart.png">
+					<img src="./images/pixelart.png" alt="Pixel Art">
+				</a>
+			</div>
+
+			<div data-tab-content class="thumbnail" id="thumbnail3">
+				<a target="popup" href="./images/assignment.jpg">
+					<img src="./images/assignment.jpg" alt="Assignment">
+				</a>
+			</div>
+
+			<div data-tab-content class="thumbnail" id="about_student">
+				<h2>Student's name: Nguyễn Quang Anh</h2>
+			</div>
+		</div>
+	</main>
+
+	<footer>
+		<h2>Copyright</h2>
+	</footer>
+</body>
+
+<script src="task11.js"></script>
+</html>

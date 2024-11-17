@@ -1,0 +1,38 @@
+#form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	width: 350px;
+	background-color: aqua;
+}
+
+#username {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#password {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#retype {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#reset {
+	display: flex;
+	justify-content: flex-end;
+	gap: 25px;
+	padding: 10px 20px;
+}

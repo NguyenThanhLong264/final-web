@@ -1,0 +1,23 @@
+table, th, td { 
+    padding: 10px;
+  }
+  table{
+    width: 30%;
+  }
+  
+  th {
+    background-color: darkblue;
+  }
+  
+  td {
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: lightblue;
+  }
+  
+  table tr:hover td{
+    background-color: blue;
+  }
+  

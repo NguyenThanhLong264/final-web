@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Excellent Students</title>
+</head>
+<body>
+    <h1>Excellent Students (Mark > 75)</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Class</th>
+            <th>Mark</th>
+        </tr>
+        {% for student in students %}
+        <tr>
+            <td>{{ student.id }}</td>
+            <td>{{ student.name }}</td>
+            <td>{{ student.student_class }}</td>
+            <td>{{ student.mark }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

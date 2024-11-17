@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Change Link and Text</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+	<a href="https://www.usth.edu.vn" id="usth">USTH Website</a>
+	<script>
+		$(document).ready(function () {
+			// New URL and text
+			var newUrl = "https://www.vnexpress.net";
+			var newText = "VnExpress";
+
+			// Find the link with the specified ID
+			var link = $("#usth");
+
+			// Change the href attribute and text of the link
+			link.attr("href", newUrl);
+			link.text(newText);
+		})
+	</script>
+</body>
+</html>
